@@ -1,0 +1,69 @@
+{% extends 'vehiculo/base.html' %}
+
+{% block titulo %}
+    | Lista
+{% endblock titulo %}
+    
+
+{% block content %}
+{% if messages %}
+    <div class="container mt-3">
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+<div class  = 'container'>
+    <div class = 'd-flex justify-content-center'>
+        <h1>Lista de Vehiculos</h1>
+    </div>
+</div>
+
+<table class="table m-5">
+    <thead>
+      <tr>
+        
+    
+            
+        
+            
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Serial Carroceria</th>
+        <th scope="col">Serial Motor</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Condicion de Precio</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        
+        {% for lista in listas %}
+            
+       
+            
+      <tr>
+        <td>{{lista.marca}}</td>
+        <td>{{lista.modelo}}</td>
+        <td>{{lista.serial_carroceria}}</td>
+        <td>{{lista.serial_motor}}</td>
+        <td>{{lista.categoria}}</td>
+        <td>{{lista.precio}}</td>
+        
+        {% if lista.precio >= 30000 %} 
+        <td>Alto</td>
+        
+        {% elif lista.precio < 10000 %}
+        <td>Bajo</td>
+        {% else %}
+        <td>Medio</td>
+      <tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}
+    
