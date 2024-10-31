@@ -6,3 +6,4 @@ tengo dos usuarios de pruebas
 2.- name2 : usuarioprueba2
     password: prueba12345
     
+entorno virtual: proyecto_vehiculos_django
